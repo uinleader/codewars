@@ -18,6 +18,8 @@ layout = [[sg.Text('Basic Course Homeworks')],
            sg.Button('PigLatin')],
           [sg.Text('IntFilter'), sg.InputText(key='IntFilterIn'), sg.InputText(readonly=True, key='IntFilterRes'),
            sg.Button('IntFilter')],
+          [sg.Text('WordScore'), sg.InputText(key='WordScoreIn'), sg.InputText(readonly=True, key='WordScoreRes'),
+           sg.Button('WordScore')],
           [sg.Button('EXIT')]]
 
 # Create the Window
@@ -42,4 +44,6 @@ while True:
         window.Element('PigLatinRes').Update(cw.pigLatin(values['PigLatinIn']))
     if event == 'IntFilter':
         window.Element('IntFilterRes').Update(cw.intFilter(values['IntFilterIn']))
+    if event == 'WordScore':
+        window.Element('WordScoreRes').Update(cw.high(values['WordScoreIn']))
 window.close()

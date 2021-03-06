@@ -10,7 +10,9 @@ romanNumbers = {
 
 vowels = ['a', 'e', 'i', 'o', 'u']
 
+scoreLetter = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
+# https://www.codewars.com/kata/5648b12ce68d9daa6b000099
 def BusStops(bus_stops):
     bus = []
     bus_stops = bus_stops.split()
@@ -23,6 +25,7 @@ def BusStops(bus_stops):
         peopleNum = peopleNum + int(stop[0]) - int(stop[1])
     return peopleNum
 
+# https://www.codewars.com/kata/5467e4d82edf8bbf40000155
 def descending_order(num):
     arr = []
     result = ''
@@ -33,6 +36,7 @@ def descending_order(num):
         result += entry
     return result
 
+# https://www.codewars.com/kata/53dbd5315a3c69eed20002dd
 def intFilter(l):
     j = l.split()
     result = []
@@ -45,7 +49,7 @@ def intFilter(l):
             pass
     return result
 
-
+# https://www.codewars.com/kata/5262119038c0985a5b00029f
 def primeCheck(num):
     num = int(num)
     if num < 2:
@@ -53,11 +57,13 @@ def primeCheck(num):
     a = 1
     while num % a == 0:
         a += 1
-    if (a ** (num - 1) - 1) % num == 0:
+    b = a**(num-1)-1
+    if b % num == 0:
         return 'Prime Number'
     else:
         return 'Not Prime Number'
 
+# https://www.codewars.com/kata/51b6249c4612257ac0000005
 def romanNum(roman):
     arr = []
     result = 0
@@ -71,6 +77,7 @@ def romanNum(roman):
             result += num
     return result
 
+# https://www.codewars.com/kata/520b9d2ad5c005041100000f
 def pigLatin(text):
     result = ''
     wString = text.split()
@@ -83,6 +90,7 @@ def pigLatin(text):
     result = result[:-1]
     return result
 
+# https://www.codewars.com/kata/54ff3102c1bad923760001f3
 def vowelsCount(input_str):
     num_vowels = 0
     # your code here
@@ -90,3 +98,21 @@ def vowelsCount(input_str):
         if letter in vowels:
             num_vowels += 1
     return num_vowels
+
+# https://www.codewars.com/kata/57eb8fcdf670e99d9b000272/
+def high(string):
+    words = string.split()
+    scores = {}
+    for word in words:
+        score = 0
+        for letter in word:
+            score += scoreLetter.index(letter)+1;
+        scores[word] = score
+    sortedScores = sorted(scores.values(), reverse=True)
+    for word, score in scores.items():
+        if score == sortedScores[0]:
+            return word
+
+
+
+

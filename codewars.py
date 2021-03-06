@@ -14,7 +14,6 @@ vowels = ['a', 'e', 'i', 'o', 'u']
 def BusStops(bus_stops):
     bus = []
     bus_stops = bus_stops.split()
-
     for entry in bus_stops:
         bus.append(entry.split(','))
     # Good Luck!
@@ -24,20 +23,15 @@ def BusStops(bus_stops):
         peopleNum = peopleNum + int(stop[0]) - int(stop[1])
     return peopleNum
 
-
 def descending_order(num):
     arr = []
     result = ''
     for n in str(num):
         arr += n
-
     SArr = sorted(arr, reverse=True)
-
     for entry in SArr:
         result += entry
-
     return result
-
 
 def intFilter(l):
     j = l.split()
@@ -64,7 +58,6 @@ def primeCheck(num):
     else:
         return 'Not Prime Number'
 
-
 def romanNum(roman):
     arr = []
     result = 0
@@ -78,7 +71,6 @@ def romanNum(roman):
             result += num
     return result
 
-
 def pigLatin(text):
     result = ''
     wString = text.split()
@@ -91,12 +83,10 @@ def pigLatin(text):
     result = result[:-1]
     return result
 
-
 def vowelsCount(input_str):
     num_vowels = 0
     # your code here
     for letter in input_str:
         if letter in vowels:
             num_vowels += 1
-
     return num_vowels

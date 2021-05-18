@@ -20,6 +20,8 @@ layout = [[sg.Text('Basic Course Homeworks')],
            sg.Button('IntFilter')],
           [sg.Text('WordScore'), sg.InputText(key='WordScoreIn'), sg.InputText(readonly=True, key='WordScoreRes'),
            sg.Button('WordScore')],
+          [sg.Text('Unique'), sg.InputText(key='UniqueIn'), sg.InputText(readonly=True, key='UniqueRes'),
+           sg.Button('Unique')],
           [sg.Button('EXIT')]]
 
 # Create the Window
@@ -46,4 +48,6 @@ while True:
         window.Element('IntFilterRes').Update(cw.intFilter(values['IntFilterIn']))
     if event == 'WordScore':
         window.Element('WordScoreRes').Update(cw.high(values['WordScoreIn']))
+    if event == 'Unique':
+        cw.unique(values['UniqueIn'])
 window.close()
